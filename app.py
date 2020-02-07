@@ -126,7 +126,7 @@ def return_json_recommended_tags(question_index) :
 
         #predict tags
         pred = classifier.predict_proba(pd.DataFrame([question[['Title', 'Body']]]))[0]
-        recommended_tags = np.array(frequent_tags)[pred.argsort()[::-1][0:5]]
+        recommended_tags = np.array(frequent_tags)[pred.argsort()[::-1][0:3]]
 
         question_body = display_question(question['Body'])
 
